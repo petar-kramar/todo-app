@@ -1,0 +1,121 @@
+body {
+  background: linear-gradient(to bottom, #68eacc 0%, #497be8 100%);
+  min-height: 100vh;
+}
+
+h1 {
+  margin: 20px auto;
+}
+
+.app {
+  padding: 20px;
+  background-color: white;
+  max-width: 30%;
+  margin: 50px auto;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  input {
+    border: solid 1px gray;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 18px;
+    width: 100%;
+  }
+
+  button {
+    position: relative;
+    background-color: #8d4ce8;
+    border: none;
+    padding: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 18px;
+      height: 4px;
+      border-radius: 2px;
+      background-color: white;
+    }
+    &::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+}
+
+.list {
+  margin: 15px 0 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 7px;
+  border-radius: 5px;
+}
+
+.task {
+  width: 100%;
+  padding: 5px;
+}
+
+.listItem {
+  display: flex;
+  border-radius: 5px;
+  background-color: #f2f0f3;
+  cursor: pointer;
+  &:hover {
+    .delete, img {
+      width: 100%;
+    }
+  }
+  &.solved {
+    background-color: rgb(101, 158, 101);
+  }
+}
+
+.delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e44e3d;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  max-width: 40px;
+  width: 0;
+  cursor: pointer;
+  transition: width 600ms;
+  img {
+    max-width: 20px;
+    width: 0;
+    transition: width 600ms;
+  }
+}
+
+
+
+.deleteAll {
+  margin: 20px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  button {
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #8d4ce8;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+  }
+}
